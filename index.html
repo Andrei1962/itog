@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аттестация №2 js</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="main">
+    <form class="form" action="name">
+      <button class="form__input_about" id="registr">Зарегистрироваться</button>      
+      <h1 class="form__input_title" id="title">Вход</h1>
+
+      <span class="form__input_description-one" id="enail">Email</span>
+                              <!-- блок ввода email -->
+      <div class="form__input_email" id="inputemail">            
+        <div class="form__input_email-stars" id="stars">*</div>
+        <input type="Email" class="form__input_email-input" id="email" placeholder="johndoe@email.com">
+      </div>
+      <span class="error" id="emailError"></span>
+
+      <span class="form__input_description-two" id="Password">Пароль</span>
+                      <!-- блок ввода пароля -->
+      <div class="form__input_password" id="inputpassword">             
+        <div class="form__input_password-stars" id="starss">*</div>
+        <input type="text" class="form__input_password-input" id="password" placeholder="Введите пароль">
+      </div>  
+      <span class="error" id="passwordError"></span>
+
+                              <!-- блок ввода чекбокса -->
+      <label class="custom-checkbox" id="starsss">
+        <input type="checkbox" class="custom-checkbox__input" id="agree">
+        <span class="custom-checkbox__checkmark" id="starssss" ></span>
+        <span class="custom-checkbox__label" id="arreeSpan">Я согласен с Правилами пользования приложением</span>
+      </label>
+      <span class="error" id="arreeError"></span>      
+
+      <button class="form__input_enter" id="submit">Вход</button>
+
+    </form> 
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
