@@ -3,25 +3,46 @@
   width: 1440px;
   height: 769px;
   background-color: #1B2473;
-  border: 6px solid #097df0;
-  
-  .error {
-    font-size: 10px;
-    /*background: #CB2424;*/
-    color: #CB2424;
+  object-fit: fill;
 
+  .error {
+    position: relative;
+    font-size: 10px;
+    color: #CB2424;
     display: none;
+    top: 268px;
+
     &.active {
       display: block;
     }
+  }
+
+  .hiding {
+    /*content: '••••••••';*/
+    display: none;
+    color: #CB2424;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .hidingemail {
+    /*content: '••••••••';*/
+    display: none;
+    color: #CB2424;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .hidingpassword {
+    display: none;
+    color: #787878;
+    margin-top: 15px;
+    margin-left: 15px;
   }
 
   .form {                /* белое окно */
     position: relative;
     display: flex;
     flex-direction: column; 
-    gap: 10px;
-    /*align-items: left; */
     align-items: flex-start;   
     width: 600px;
     height: 412px;
@@ -51,27 +72,25 @@
     }
 
     &__input_title {         /* вход\регистрация */
-      position: relative;
+      position: absolute;
       align-items: center;
       text-align: center;
       width: 115px;
       height: 50px;
-      top: 0px;
-      left: 190px;
+      top: 26px;
+      left: 270px;
       font-family: Roboto;
       font-weight: 700;
       font-size: 50px;
       line-height: 50px;
-      letter-spacing: 0;
-      margin-bottom: 0px;/*7*/
     }
 
     &__input_description-one {       /* email */
-      position: relative;
+      position: absolute;
       width: 40px;
       height: 16px;
-      top: 0px;/*20*/
-      left: 5px;
+      top: 95px;
+      left: 75px;
       font-family: Roboto;
       font-weight: 700;
       font-size: 16px;
@@ -81,18 +100,15 @@
     }
 
     &__input_email {           /* строка ввода email */
-      position: relative;
+      position: absolute;
       display: flex;
-      /*justify-content: flex-start;*/
-      width: 509px;
+      width: 510px;
       height: 49px;
-      top: 0px;/*20*/
-      left: 5px;
+      top: 112px;
+      left: 65px;
       border-radius: 10px;
       border-width: 2px;
       border: 2px solid #787878;
-      margin-bottom: -10px;/* 20*/
-      
 
       &-stars {/* звездочка email */
         position: relative;
@@ -103,9 +119,11 @@
       }
 
       &-input {/* ввод email */
+        position: absolute;
         width: 400px;
         height: 36px;
-        top: 0px;/* 7*/
+        top: 5px;
+        left: 10px;
         font-family: Roboto;
         font-weight: 700;
         font-size: 28px;
@@ -119,32 +137,53 @@
     }
 
     &__input_description-two {/*пароль*/
-      position: relative;
+      position: absolute;
       width: 56px;
       height: 16px;
-      top: 0px;/*20*/
-      left: 5px;;
+      top: 187px;
+      left: 75px;;
       font-family: Roboto;
       font-weight: 700;
       font-size: 16px;
       line-height: 16px;
       letter-spacing: 0;
       margin-bottom: -10px;
-      margin-top: 10px;
+      margin-top: 0px;
     }
 
     &__input_password {        /* строка ввода пароля */
-      position: relative;
+      position: absolute;
       display: flex;
       justify-content: flex-start;
-      width: 509px;
+      width: 510px;
       height: 49px;
-      top: 0px;/* 20*/
-      left: 5px;
+      top: 206px;
+      left: 65px;
       border-radius: 10px;
       border-width: 2px;
       border: 2px solid #787878;
       margin-bottom: -10px;/* отодвигаем чекбокс */ /*20*/
+      
+      /*&-hiding {
+
+        position: relative;
+        content: '••••••••';
+        color: #CB2424;
+        display: none;
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 0%;
+        z-index: 1;
+      }*/
+      /*&::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 20px;  
+        z-index: 1;   
+      }*/
 
       &-stars {/* звездочка пароля */
         position: relative;
@@ -164,34 +203,49 @@
         line-height: 36px;
         letter-spacing: 0; 
         margin:  auto 0;
-        border: #fff;
-        
+        border: #fff; 
       }
     }
 
     .custom-checkbox {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       cursor: pointer;
-      color: #000000;      /* цвет звездочки черный */
-      margin-bottom: -10px;/* 5*/
-      margin-top: 10px;
+      color: #7e7575;      /* цвет звездочки черный */
+      margin-left: -9px;
+      top: 258px;      
     }
 
-    .error::before {
-      color: #CB2424;     /* цвет звездочки красный */
+    &_stars {
+      position: absolute;
+      left: 5px;
+      margin-left: 5px;
+      top: 0px;
+      color: #ce1b1b;
     }
+
+    /*.error::before {
+      color: #CB2424;  /* цвет звездочки красный *
+    }     
 
     .custom-checkbox::before {
       content: '*';
       position: absolute;
       left: -5px;
       top: -1px;      
-    }
+    }*/
 
     .custom-checkbox__label {
-      color: #342f2f; /* цвет текста */
+      position: relative;
+      color: #787878; /* цвет текста */
+      margin-left: 10px;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #787878;
+      margin-top: 3px;
     }
 
     .custom-checkbox__input {
@@ -203,14 +257,14 @@
     }
 
     .custom-checkbox__checkmark {
+      position: relative;
       display: block;
-      width: 24px;
-      height: 24px;
+      width: 17px;
+      height: 17px;
       left: 6px;
-      border: 2px solid #706262;/* цвет рамки галочки */
+      border: 2px solid #787878;/* цвет рамки галочки */
       border-radius: 7px;
       margin-right: 10px;
-      position: relative;
     }
 
     .custom-checkbox:hover .custom-checkbox__checkmark {
@@ -226,8 +280,8 @@
       position: absolute;
       display: none;
       color: #000000;/* цвет галочки */
-      left: 5px;
-      top: 4px;
+      left: 2px;
+      top: 2px;
       width: 5px;
       height: 10px;
     }
@@ -236,67 +290,26 @@
       display: block;
     }
 
-    &__input_arreement {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 412px;
-      height: 24px;
-      top: 0px;/*20*/   /*не влияет*/
-      left: 5px;
-      margin-bottom: 0px;/*15*/
-
-      &-stars {
-        position: relative;
-        width: 9px;
-        height: 18px;
-        top: 2px;
-        left: 3px;
-      }
-
-      /*&-input {
-        position: relative;        
-        z-index: 1;
-        opacity: 0;
-        width: 15px;
-        height: 10px;
-        top: 0px;
-        right: 100px;
-        border-radius: 7px;
-        border-width: 2px;
-        border-color: #CB2424;
-        accent-color: #d21e12;/* красный при нажатии *
-      }*/
-
-      
-      /*&-span {/* согласие с правилами *
-        position: relative;
-        width: 347px;
-        height: 16px;
-        top: 2px;
-        left: 14px;
-        font-family: Roboto;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16px;
-        letter-spacing: 0%;
-      }*/
-    }
-
     &__input_enter {            /* ВВОд */
-      position: relative;
+      position: absolute;
       width: 180px;
       height: 52px;
-      left: 180px;
-      top: 15px;
+      left: 240px;
+      top: 334px;
       background: #1A226B;
       font-family: Roboto;
       font-weight: 700;
       font-size: 24px;
       line-height: 16px;
-      letter-spacing: 0;
       color: #FFFFFF;
       cursor: pointer;
+      transition: 0.5s;
+      border-radius: 10px;
+      border: none;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
