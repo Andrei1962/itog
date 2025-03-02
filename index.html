@@ -12,29 +12,33 @@
       <button class="form__input_about" id="registr">Зарегистрироваться</button>      
       <h1 class="form__input_title" id="title">Вход</h1>
 
-      <span class="form__input_description-one" id="enail">Email</span>
+      <span class="form__input_description-one" id="emailblock">Email</span>
                               <!-- блок ввода email -->
-      <div class="form__input_email" id="inputemail">            
-        <div class="form__input_email-stars" id="stars">*</div>
-        <input type="Email" class="form__input_email-input" id="email" placeholder="johndoe@email.com">
-      </div>
+      <label class="form__input_email" id="inputemail">            
+        <span class="form__input_email-stars" id="stars">*</span>
+        <span class="hidingemail" id="hidingemail">••••••••</span>
+        <input type="text" class="form__input_email-input" id="email" placeholder="johndoe@email.com">
+      </label>
       <span class="error" id="emailError"></span>
 
-      <span class="form__input_description-two" id="Password">Пароль</span>
+      <span class="form__input_description-two" id="passwordblock">Пароль</span>
                       <!-- блок ввода пароля -->
-      <div class="form__input_password" id="inputpassword">             
-        <div class="form__input_password-stars" id="starss">*</div>
+      <label class="form__input_password" id="inputpassword">             
+        <span class="form__input_password-stars" id="starss">*</span>
+        <span class="hiding" id="hiding">••••••••</span>
+        <span class="hidingpassword" id="hidingpassword">••••</span>
         <input type="text" class="form__input_password-input" id="password" placeholder="Введите пароль">
-      </div>  
+      </label>  
       <span class="error" id="passwordError"></span>
 
                               <!-- блок ввода чекбокса -->
       <label class="custom-checkbox" id="starsss">
+        <span class="custom-checkbox_stars" id="starsssss">*</span>
         <input type="checkbox" class="custom-checkbox__input" id="agree">
         <span class="custom-checkbox__checkmark" id="starssss" ></span>
         <span class="custom-checkbox__label" id="arreeSpan">Я согласен с Правилами пользования приложением</span>
       </label>
-      <span class="error" id="arreeError"></span>      
+      <span class="error" id="arreeError">Поле обязательно для заполнения</span>      
 
       <button class="form__input_enter" id="submit">Вход</button>
 
