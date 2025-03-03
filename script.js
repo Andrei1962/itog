@@ -132,11 +132,11 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     console.log('emailValue:', emailValue)
     document.querySelector('#email').placeholder = 'Введите email'
     emailError.textContent = 'Поле обязательно для заполнения'
-    emailError.style.top = '149px'
+    emailError.style.top = '153px'
     passwordError.textContent = 'Поле обязательно для заполнения'
-    passwordError.style.top = '233px'
+    passwordError.style.top = '236px'
     arreeError.textContent = "Поле обязательно для заполнения"
-    arreeError.style.top = '240px'    
+    arreeError.style.top = '243px'    
     errorEmail()
     errorPasword()
     errorAgree() 
@@ -158,7 +158,7 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     password.style.display = 'none' /* убрать слово введитете email */
     hiding.style.color = 'black'  
     hiding.style.display = 'block'  
-    emailError.style.top = '150px' 
+    emailError.style.top = '153px' 
     email.value = ''
     errorEmail()  
     isValid = false
@@ -173,7 +173,7 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     passwordError.textContent = 'Пароль должен содержать как минимум 8 символов'
     email.value = ''
     document.querySelector('#email').placeholder = 'johndoe@email.com'
-    passwordError.style.top = '242px'
+    passwordError.style.top = '247px'
     /*hiding.style.display = 'block'*/
     hiding.style.color = 'black'  
     password.style.display = 'none' /* убрать слово введитете пароль*/
@@ -191,7 +191,7 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
   if (agreeChecked === false) {                    /* галочки нет */
     errorAgree() 
     arreeError.textContent = "Поле обязательно для заполнения"
-    arreeError.style.top = '260px'
+    arreeError.style.top = '263px'
     starsss.style.top = '260px'
     isValid = false
     console.log('isValid:', isValid )
@@ -228,7 +228,7 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
       passwordError.textContent = 'Логин или Пароль невереный '
       document.querySelector('#email').placeholder = 'johndoe$email'
       passwordError.style.display = 'block' 
-      passwordError.style.top = '242px'
+      passwordError.style.top = '246px'
       password.style.display = 'none' /* убрать слово введитете пароль*/      
       hiding.style.display = 'block'
       hiding.style.color = ' #cb2424'
@@ -245,7 +245,7 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
       password.value = ''
       emailError.textContent = 'пользователь с таким email уже зарегистрирован'
       emailError.style.display = 'block' 
-      emailError.style.top = '148px'
+      emailError.style.top = '152px'
       /*alert('пользователь с таким email уже зарегистрирован')*/
       
     } else {
