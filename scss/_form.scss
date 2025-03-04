@@ -1,0 +1,315 @@
+.main {
+  position: relative;
+  width: 1440px;
+  height: 769px;
+  background-color: #1B2473;
+  object-fit: fill;
+
+  .error {
+    position: relative;
+    font-size: 10px;
+    color: #CB2424;
+    display: none;
+    top: 268px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .hiding {
+    /*content: '••••••••';*/
+    display: none;
+    color: #CB2424;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .hidingemail {
+    /*content: '••••••••';*/
+    display: none;
+    color: #CB2424;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .hidingpassword {
+    display: none;
+    color: #787878;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .form {                /* белое окно */
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;   
+    width: 600px;
+    height: 412px;
+    top: 82px;
+    left: 412px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: left;
+    color: #170b0b;
+    padding-left: 60px;
+    
+    &__input_about {/* заголовок справа */
+      position: relative;
+      width: 137px;
+      height: 16px;
+      top: 11px;
+      left: 440px;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0;
+      color: #1A226B;
+      text-align: right; 
+      border: none; 
+      background-color: #fff;    
+    }
+
+    &__input_title {         /* вход\регистрация */
+      position: absolute;
+      align-items: center;
+      text-align: center;
+      width: 115px;
+      height: 50px;
+      top: 26px;
+      left: 270px;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    &__input_description-one {       /* email */
+      position: absolute;
+      width: 40px;
+      height: 16px;
+      top: 95px;
+      left: 75px;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0;
+      margin-bottom: -10px;
+    }
+
+    &__input_email {           /* строка ввода email */
+      position: absolute;
+      display: flex;
+      width: 510px;
+      height: 49px;
+      top: 112px;
+      left: 65px;
+      border-radius: 10px;
+      border-width: 2px;
+      border: 2px solid #787878;
+
+      &-stars {/* звездочка email */
+        position: relative;
+        width: 9px;
+        height: 18px;
+        top: 0px;
+        left: -13px;
+      }
+
+      &-input {/* ввод email */
+        position: absolute;
+        width: 400px;
+        height: 36px;
+        top: 5px;
+        left: 10px;
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 0;
+        outline: none;
+        margin:  auto 0;
+        border: #fff;
+        
+      }
+    }
+
+    &__input_description-two {/*пароль*/
+      position: absolute;
+      width: 56px;
+      height: 16px;
+      top: 187px;
+      left: 75px;;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0;
+      margin-bottom: -10px;
+      margin-top: 0px;
+    }
+
+    &__input_password {        /* строка ввода пароля */
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      width: 510px;
+      height: 49px;
+      top: 206px;
+      left: 65px;
+      border-radius: 10px;
+      border-width: 2px;
+      border: 2px solid #787878;
+      margin-bottom: -10px;/* отодвигаем чекбокс */ /*20*/
+      
+      /*&-hiding {
+
+        position: relative;
+        content: '••••••••';
+        color: #CB2424;
+        display: none;
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 0%;
+        z-index: 1;
+      }*/
+      /*&::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 20px;  
+        z-index: 1;   
+      }*/
+
+      &-stars {/* звездочка пароля */
+        position: relative;
+        width: 9px;
+        height: 18px;
+        top: 1px;
+        left: -13px;
+      }
+
+      &-input {            /* ввод пароля*/
+        position: relative;
+        width: 212px;
+        height: 36px;
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 0; 
+        margin:  auto 0;
+        border: #fff; 
+      }
+    }
+
+    .custom-checkbox {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      cursor: pointer;
+      color: #7e7575;      /* цвет звездочки черный */
+      margin-left: -9px;
+      top: 258px;      
+    }
+
+    &_stars {
+      position: absolute;
+      left: 5px;
+      margin-left: 5px;
+      top: 0px;
+      color: #ce1b1b;
+    }
+
+    /*.error::before {
+      color: #CB2424;  /* цвет звездочки красный *
+    }     
+
+    .custom-checkbox::before {
+      content: '*';
+      position: absolute;
+      left: -5px;
+      top: -1px;      
+    }*/
+
+    .custom-checkbox__label {
+      position: relative;
+      color: #787878; /* цвет текста */
+      margin-left: 10px;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #787878;
+      margin-top: 3px;
+    }
+
+    .custom-checkbox__input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .custom-checkbox__checkmark {
+      position: relative;
+      display: block;
+      width: 17px;
+      height: 17px;
+      left: 6px;
+      border: 2px solid #787878;/* цвет рамки галочки */
+      border-radius: 7px;
+      margin-right: 10px;
+    }
+
+    .custom-checkbox:hover .custom-checkbox__checkmark {
+      opacity: 0.7;
+    }
+
+    .custom-checkbox__input:checked ~ .custom-checkbox__checkmark {
+      background-color: #FFFFFF;
+    }
+
+    .custom-checkbox__checkmark::after {
+      content: "✓";
+      position: absolute;
+      display: none;
+      color: #000000;/* цвет галочки */
+      left: 2px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+    }
+
+    .custom-checkbox__input:checked ~ .custom-checkbox__checkmark::after {
+      display: block;
+    }
+
+    &__input_enter {            /* ВВОд */
+      position: absolute;
+      width: 180px;
+      height: 52px;
+      left: 240px;
+      top: 334px;
+      background: #1A226B;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 16px;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 10px;
+      border: none;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
