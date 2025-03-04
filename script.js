@@ -17,6 +17,8 @@ let auth = true                   /* false--вход или true--регистр
 console.log('auth:', auth)
 console.log('checked:', checked)
 let user = {email: '', password: ''}
+email.value = ''
+password.value = ''
 
 registrs.addEventListener('click', (event)=> {   /* переключатель по клику, выбор страницы вход или авторизация */
   event.preventDefault()  
@@ -69,6 +71,7 @@ function avtorizacia() {      /* страница авторизация */
   resetErrorPasword()
   resetErrorAgree()
 }  
+
 function errorEmail() {                              /* ошибка email красный */
   emailError.style.display = 'block' 
   stars.style.color = ' #CB2424'
@@ -103,7 +106,7 @@ function errorAgree() {                         /* ошибка чекбокса
   starssss.style.border = '2px solid #cb2424'
   starsssss.style.color = ' #cb2424' 
   starssss.style.marginTop = '-18px'  
-  starsss.style.top = '240px'
+  starsss.style.top = '280px'
 }
 
 function resetErrorAgree() {                      /* сброс ошибки  чекбокса черный */
@@ -111,7 +114,7 @@ function resetErrorAgree() {                      /* сброс ошибки  ч
   starssss.style.border = '2px solid #787878'
   starssss.style.marginTop = '0px' 
   starsssss.style.color = ' #787878' 
-  starsss.style.top = '258px'
+  starsss.style.top = '280px'
 }
 
 submit.addEventListener('click', (event)=>{  /* функция по клику кнопки вход */
@@ -132,17 +135,20 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     console.log('emailValue:', emailValue)
     document.querySelector('#email').placeholder = 'Введите email'
     emailError.textContent = 'Поле обязательно для заполнения'
-    emailError.style.top = '153px'
+    emailError.style.top = '168px'
     passwordError.textContent = 'Поле обязательно для заполнения'
-    passwordError.style.top = '236px'
+    passwordError.style.top = '252px'
     arreeError.textContent = "Поле обязательно для заполнения"
-    arreeError.style.top = '243px'    
+    arreeError.style.top = '280px'    
     errorEmail()
     errorPasword()
     errorAgree() 
     document.querySelector('#email').placeholder = 'Введите email'
     isValid = false
     console.log('isValid:', isValid )
+    setTimeout(() => {
+      avtorizacia()      
+    },2000)
     return
     
   } else (emailValue != ''); {             /* значение емейл  не пусто */
@@ -154,15 +160,18 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
   if (!regexp.test(emailValue)) {              /* значение емейл  не валидно */
     console.log('!regexp.test(emailValue):', !regexp.test(emailValue));  
     emailError.textContent = 'Email невалидный' 
-    document.querySelector('#email').placeholder = 'johndoe$email'
+    document.querySelector('#email').placeholder = 'johndoe@email'
     password.style.display = 'none' /* убрать слово введитете email */
     hiding.style.color = 'black'  
     hiding.style.display = 'block'  
-    emailError.style.top = '153px' 
-    email.value = ''
+    emailError.style.top = '170px' 
+    /*email.value = ''*/
     errorEmail()  
     isValid = false
     console.log('isValid:', isValid )
+    setTimeout(() => {
+      avtorizacia()  
+    },2000)
     return
 
   } else (regexp.test(emailValue)); {               /* значение емейл   валидно */
@@ -171,10 +180,8 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
 
   if (passwordValue.length < 8) {      
     passwordError.textContent = 'Пароль должен содержать как минимум 8 символов'
-    email.value = ''
     document.querySelector('#email').placeholder = 'johndoe@email.com'
-    passwordError.style.top = '247px'
-    /*hiding.style.display = 'block'*/
+    passwordError.style.top = '260px'
     hiding.style.color = 'black'  
     password.style.display = 'none' /* убрать слово введитете пароль*/
     hidingpassword.style.display = 'block'
@@ -182,6 +189,9 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     resetErrorEmail()
     isValid = false
     console.log('isValid:', isValid )
+    setTimeout(() => {
+      avtorizacia()       
+    },2000)
     return
 
   } else (passwordValue.length >= 8); {
@@ -191,10 +201,14 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
   if (agreeChecked === false) {                    /* галочки нет */
     errorAgree() 
     arreeError.textContent = "Поле обязательно для заполнения"
-    arreeError.style.top = '263px'
-    starsss.style.top = '260px'
+    arreeError.style.top = '310px'
+    starsss.style.top = '281px'
     isValid = false
     console.log('isValid:', isValid )
+    setTimeout(() => {
+      arreeError.style.display = 'none'       
+      resetErrorAgree()
+    },2000)
     return
 
   } else (agreeChecked === true); {                /* галочки есть */
@@ -225,15 +239,17 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
       /*alert('неверный пароль и логан')*/
       errorEmail()
       errorPasword()      
-      passwordError.textContent = 'Логин или Пароль невереный '
+      passwordError.textContent = 'Логин или Пароль невереный'
       document.querySelector('#email').placeholder = 'johndoe$email'
       passwordError.style.display = 'block' 
-      passwordError.style.top = '246px'
+      passwordError.style.top = '260px'
       password.style.display = 'none' /* убрать слово введитете пароль*/      
       hiding.style.display = 'block'
       hiding.style.color = ' #cb2424'
-      email.value = ''
-      password.value = ''
+      setTimeout(() => {
+        avtorizacia()
+      },2000)
+      
     }
 
   } else {
@@ -241,13 +257,14 @@ submit.addEventListener('click', (event)=>{  /* функция по клику �
     let userExists = users.some(item => item.email === emailValue) /* Метод массива some() позволяет узнать, есть ли в массиве хотя бы один элемент, удовлетворяющий условию в функции-колбэке. */
 
     if (userExists) {/* Функция user_exists проверяет, существует ли пользователь в системе.  */
-      email.value = ''
-      password.value = ''
       emailError.textContent = 'пользователь с таким email уже зарегистрирован'
       emailError.style.display = 'block' 
-      emailError.style.top = '152px'
-      /*alert('пользователь с таким email уже зарегистрирован')*/
-      
+      emailError.style.top = '167px'
+      setTimeout(() => {        
+        registracia()
+      },2000)
+      return
+            
     } else {
       users.push({email: emailValue, password: passwordValue})
       localStorage.setItem('users', JSON.stringify(users))

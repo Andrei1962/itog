@@ -107,7 +107,7 @@ table {
   border-radius: 20px;
   background-color: #fff;
   text-align: left;
-  color: #170b0b;
+  color: #787878;
   padding-left: 60px;
   /*.error::before {
     color: #CB2424;  /* цвет звездочки красный *
@@ -121,11 +121,11 @@ table {
   }*/
 }
 .main .form__input_about { /* заголовок справа */
-  position: relative;
+  position: absolute;
   width: 137px;
   height: 16px;
   top: 11px;
-  left: 440px;
+  left: 452px;
   font-family: Roboto;
   font-weight: 700;
   font-size: 14px;
@@ -262,20 +262,20 @@ table {
   border: #fff;
 }
 .main .form .custom-checkbox {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: flex-end;
   cursor: pointer;
-  color: #7e7575; /* цвет звездочки черный */
+  color: #787878; /* цвет звездочки черный */
   margin-left: -9px;
-  top: 258px;
+  top: 280px;
 }
 .main .form_stars {
   position: absolute;
   left: 5px;
   margin-left: 5px;
   top: 0px;
-  color: #ce1b1b;
+  color: #CB2424;
 }
 .main .form .custom-checkbox__label {
   position: relative;
@@ -285,7 +285,6 @@ table {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  color: #787878;
   margin-top: 3px;
 }
 .main .form .custom-checkbox__input {
@@ -315,7 +314,7 @@ table {
   content: "✓";
   position: absolute;
   display: none;
-  color: #000000; /* цвет галочки */
+  color: #787878; /* цвет галочки */
   left: 2px;
   top: 2px;
   width: 5px;
